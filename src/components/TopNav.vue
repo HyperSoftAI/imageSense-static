@@ -33,7 +33,7 @@ header {
     border-bottom: 1px solid var(--color-border);
     z-index: 999;
 
-    @media screen and (max-width: 1028px) {
+    @media screen and (max-width: 1024px) {
         padding: 0 var(--section-m-gap);
     }
 
@@ -90,7 +90,7 @@ nav {
             color: rgba(255, 255, 255, 0.8)
         }
 
-        @media screen and (max-width: 1028px) {
+        @media screen and (max-width: 1024px) {
             padding: 0 20px;
 
 

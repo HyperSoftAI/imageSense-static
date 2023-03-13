@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 3949983 */
+  src: url('font/iconfont.woff2?t=1678716595842') format('woff2'),
+    url('font/iconfont.woff?t=1678716595842') format('woff'),
+    url('font/iconfont.ttf?t=1678716595842') format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sale:before {
+  content: '\e648';
+}
+
+.icon-layout:before {
+  content: '\e681';
+}
+
+.icon-bigData:before {
+  content: '\e61a';
+}
+
+.icon-xiaochengxu:before {
+  content: '\e63f';
+}
+
+.icon-iotwulianwangpingtai:before {
+  content: '\e731';
+}
+
+.icon-xcode:before {
+  content: '\ed18';
+}
+
+.icon-xindiantu:before {
+  content: '\e7a6';
+}
+
+.icon-Fintech:before {
+  content: '\e61b';
+}
+
+.icon-DigitalTwin:before {
+  content: '\e748';
+}
+
+.icon-lingshou:before {
+  content: '\e61e';
+}
+
+.icon-phone:before {
+  content: '\e614';
+}
+
+.icon-weibo:before {
+  content: '\e63e';
+}
+
+.icon-weixin:before {
+  content: '\e600';
+}
+
+.icon-qq:before {
+  content: '\e607';
+}
+
+.icon-email:before {
+  content: '\e856';
+}
+
+.icon-light {
+  color: #fd4c5c;
+}
+.icon-light-hover:hover {
+  color: #fd4c5c;
+}
