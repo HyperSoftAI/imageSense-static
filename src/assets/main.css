@@ -1,0 +1,75 @@
+@import './base.css';
+
+#app {
+  /* max-width: 1280px; */
+  /* margin: 0 auto;
+  padding: 2rem; */
+  padding-top: 60px;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    /* display: flex;
+    place-items: center; */
+  }
+
+  /* #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  } */
+}
+
+.bg {
+  height: 700px;
+}
+@media screen and (max-width: 600px) {
+  .bg {
+    height: 600px;
+  }
+}
+
+.common-cover {
+  padding: 95px 150px;
+  background: rgba(55, 124, 253, 0.02);
+}
+
+.max-bg-cover {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .common-cover {
+    padding: 50px 20px;
+  }
+}
+
+.su-btn {
+  background-color: #fd4c5c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.su-btn:hover {
+  background-color: rgba(253, 76, 92, 0.85);
+}
