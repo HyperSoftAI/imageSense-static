@@ -1,15 +1,15 @@
 <template>
-    <header>
-        <nav>
+    <header id="header">
+        <nav id="header-real-content">
             <div class="logo-name">
                 <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
                 <h1>HyperSoft</h1>
             </div>
-            <div class="wrapper">
-                <a href="#">关于我们</a>
-                <a href="#">解决方案</a>
-                <a href="#">产品服务</a>
-                <a href="#">联系我们</a>
+            <div class="wrapper" @click="$event => clickAnchor($event)">
+                <a anchor='aboutUs'>关于我们</a>
+                <a anchor='solution'>解决方案</a>
+                <a anchor='productService'>产品服务</a>
+                <a anchor='concatUs'>联系我们</a>
             </div>
         </nav>
     </header>
@@ -17,21 +17,74 @@
 
 <script>
 export default {
-
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+        handleScroll() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+            const target = document.getElementById('header-real-content')
+            if (scrollTop > 60) {
+                if (target.getAttribute('class') === 'header-fixed-display')
+                    return
+                target.className = 'header-fixed-display'
+            }
+            else {
+                if (target.getAttribute('class') === '')
+                    return
+                target.className = ''
+            }
+        },
+        clickAnchor(e) {
+            console.log('clickAnchor', e.target);
+            if (e.target && e.target.getAttribute('anchor')) {
+                const anchor = e.target.getAttribute('anchor')
+                const target = document.getElementById(anchor)
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' })
+                }
+            }
+        }
+    },
 }
 </script>
 
 <style lang="less" scoped>
 header {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 60px;
-    background-color: var(--vt-c-black);
+    top: 0;
+    left: 0;
+}
+
+#header-real-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+
+    // background-color: #000100;
+    background-color: transparent;
     padding: 0 var(--section-gap);
     border-bottom: 1px solid var(--color-border);
     z-index: 999;
+    // transition: transform .2s ease-in-out;
+
+    // &.header-fixed-hide {
+    //     position: absolute;
+    //     transform: translateY(-100%);
+    // }
+
+    &.header-fixed-display {
+        // position: fixed;
+        // top: -60px;
+        // transition: margin .2s ease-in-out;
+        // margin-top: 60px;
+        background-color: #000100;
+
+    }
 
     @media screen and (max-width: 1024px) {
         padding: 0 var(--section-m-gap);

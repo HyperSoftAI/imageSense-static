@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="who-cover common-cover max-bg-cover">
+        <div class="who-cover common-cover max-bg-cover" id="aboutUs">
             <div class="item-cover">
                 <div class="item">
                     <h3 class="two-title">我们是谁</h3>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="our-service-cover common-cover max-bg-cover">
+        <div class="our-service-cover common-cover max-bg-cover" id="productService">
             <div class="half-circle"></div>
             <div class="title">我们的服务</div>
             <summer-tabs v-model="activeTab">
@@ -279,7 +279,7 @@ export default {
 .our-service-cover {
     position: relative;
     overflow: hidden;
-    min-height: 300px;
+    min-height: 750px;
 
     .half-circle {
         position: absolute;
@@ -295,6 +295,13 @@ export default {
         font-size: 36px;
         text-align: center;
         color: #377CFD;
+        margin-bottom: 70px;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 40px;
+
+
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer" id="concatUs">
         <div class="footer-container">
             <div class="item">
                 <div class="logo-cover item-title">
@@ -74,6 +74,7 @@ export default {
     height: 100%;
     padding: 80px 120px;
     background: var(--color-background);
+    font-size: 12px;
 
     @media screen and (max-width: 768px) {
         padding: 50px var(--section-s-gap);

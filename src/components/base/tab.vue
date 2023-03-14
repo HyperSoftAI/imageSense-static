@@ -3,8 +3,9 @@
     <div class="heads">
       <div v-for="tab in tabs" class="item" :key="tab.name" :class="{ 'active': modelValue === tab.name }">
         <div @click="selectTab(tab)">{{ tab.label }}</div>
-        <div class="active-line" :class="{ 'hide': modelValue !== tab.name }"></div>
+        <!-- <div class="active-line" :class="{ 'hide': modelValue !== tab.name }"></div> -->
       </div>
+      <div class="active-line"></div>
     </div>
     <div class="tab-body">
       <slot></slot>
@@ -45,10 +46,10 @@ export default {
     }
   },
   watch: {
-    // currentName(newValue, oldValue) {
-    //   console.log('currentName', newValue, oldValue);
-    //   this.dealTabPosition(newValue)
-    // }
+    currentName(newValue, oldValue) {
+      console.log('currentName', newValue, oldValue);
+      this.dealTabPosition(newValue)
+    }
   },
   provide() {
     return {
@@ -57,14 +58,17 @@ export default {
     }
   },
   created() {
-    // provide('rootTabs', {
-    //   currentName: this.currentName,
-    // });
+    provide('rootTabs', {
+      currentName: this.currentName,
+    });
 
   },
   mounted() {
-    // this.dealTabPosition(this.currentName)
+    this.dealTabPosition(this.currentName)
 
+    window.onresize = () => {
+      this.dealTabPosition(this.currentName)
+    }
   },
 
   methods: {
@@ -72,15 +76,21 @@ export default {
       console.log('selectedTab.', selectedTab)
       this.currentName = selectedTab.name;
     },
-    // dealTabPosition(newCurerntName) {
-    //   const currentIndex = this.tabs.findIndex(i => i.name === newCurerntName)
-    //   const activeLine = this.$el.querySelector('.active-line');
-    //   const activeItem = this.$el.querySelectorAll('.item')[currentIndex];
-    //   const activeItemWidth = activeItem.offsetWidth;
-    //   const activeItemLeft = activeItem.offsetLeft;
-    //   const leftLength = activeItemLeft + activeItemWidth / 2 - 10;
-    //   activeLine.style.transform = `translateX(${leftLength}px)`;
-    // }
+    dealTabPosition(newCurerntName) {
+
+      const currentIndex = this.tabs.findIndex(i => i.name === newCurerntName)
+      const activeLine = this.$el.querySelector('.active-line');
+      const mainCover = this.$el.querySelector('.heads');
+      const mainCoverWidth = mainCover.offsetWidth; // 总长度
+      const everyWidth = mainCoverWidth / this.tabs.length; // 每个长度
+      const activelinWidth = activeLine.offsetWidth; // 激活线长度
+      const leftLength = everyWidth * (currentIndex + 1) - everyWidth * 0.5 - activelinWidth * 0.5; // 左边长度
+      // const activeItem = this.$el.querySelectorAll('.item')[currentIndex];
+      // const activeItemWidth = activeItem.offsetWidth;
+      // const activeItemLeft = activeItem.offsetLeft;
+      // const leftLength = activeItemLeft + activeItemWidth / 2 - 10;
+      activeLine.style.transform = `translateX(${leftLength}px)`;
+    }
   }
 };
 
@@ -98,14 +108,20 @@ export default {
   font-size: 14px;
   line-height: 40px;
   margin: 30px 0 50px;
+  user-select: none;
 
   .item {
     position: relative;
     flex: 1;
     text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(31, 38, 61, 0.6);
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(31, 38, 61, 1);
+
+    // @media screen and (max-width: 768px) {
+    //   font-size: 14px;
+    // }
+
 
     div {
       cursor: pointer;
@@ -113,19 +129,24 @@ export default {
 
     &.active {
       font-weight: 500;
-      color: rgba(31, 38, 61, 1);
+      color: #377cfd;
     }
   }
 
   .active-line {
     position: absolute;
-    width: 20px;
-    height: 4px;
-    border-radius: 2px;
-    background-color: #FF54A8;
-    left: 50%;
-    top: 31px;
-    transform: translateX(-10px);
+    width: 80px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #377cfd;
+    top: 38px;
+    left: 0px;
+    transform: translateX(0px);
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      width: 66px;
+    }
 
     &.hide {
       display: none;
