@@ -68,33 +68,60 @@ export default {
 
 <style lang="less">
   .section {
-    min-height: 100vh;
   }
   .section1 {
     color: #fff;
     background: linear-gradient(90deg, var(--vt-c-blue), var(--vt-c-blue-soft), var(--vt-c-blue-mute));
-    padding-top: 120px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     overflow: hidden;
+    justify-content: space-between;
+    min-height: 100vh;
 
     .section-inner {
       position: relative;
       width: 70%;
-      margin: auto;
+      margin: 0 auto;
       text-align: center;
       z-index: 3;
+      flex: 1;
+      display: flex;
+      flex-direction: inherit;
+      justify-content: center;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 0 5px;
+      }
     }
     .title {
       font-size: 60px;
       font-weight: bolder;
       line-height: 80px;
+      text-shadow: 0px 2px 1px rgb(0 0 0 / 50%);
+      word-break: break-word;
+      @media screen and (max-width: 1200px) {
+        font-size: 40px;
+        line-height: 54px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.5px;
+      }
     }
     .des {
-      width: 60%;
+      width: 600px;
       font-size: 16px;
       margin: 20px auto;
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        font-size: 13px;
+        margin-top: 10px;
+        width: 340px;
+      }
     }
     .show-pic {
       width: 100%;
@@ -104,9 +131,15 @@ export default {
       height: 350px;
       overflow: hidden;
       z-index: 3;
+      @media screen and (max-width: 768px) {
+        height: 300px;
+      }
 
       img {
         width: 340px;
+        @media screen and (max-width: 768px) {
+          width: 200px;
+        }
       }
     }
     .cc {
@@ -153,38 +186,98 @@ export default {
   .section2 {
     display: flex;
     flex-direction: row;
-    padding: 0px 150px;
+    padding: 0px var(--section-gap);
     background-color: fade(#2B59FF,3%);
     gap: 120px;
+
+    @media screen and (max-width: 1500px) {
+      padding: 0px var(--section-m-gap);
+    }
+
+    @media screen and (max-width: 1200px) {
+      gap: 80px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0px var(--section-s-gap);
+      gap: 0px;
+      flex-direction: column;
+    }
+
     .left2 {
       text-align: center;
+
+      @media screen and (max-width: 1200px) {
+        transform: scale(0.8);
+      }
+
+      @media screen and (max-width: 1000px) {
+        transform: scale(0.6);
+      }
+      @media screen and (max-width: 768px) {
+        // transform: scale(1);
+        width: 100%;
+        flex: auto !important;
+        transform: scale(0.8);
+        height: 410px !important;
+      }
+      @media screen and (max-width: 400px) {
+        // transform: scale(0.7);
+      }
+      
+    }
+    .right2 {
+      @media screen and (max-width: 768px) {
+          padding: 10px 0 50px;
+        }
     }
 
     .part-item {
-    
       img {
         width: 300px;
         position: absolute;
         top: 50%;
         left: 50%;
+        @media screen and (max-width: 768px) {
+          width: 200px;
+        }
 
         &.m1 {
           margin-left: -260px;
           margin-top: -320px;
+          @media screen and (max-width: 768px) {
+            margin-left: -180px;
+            margin-top: -210px;
+          }
         }
         &.m2 {
           margin-left: -30px;
           margin-top: -270px;
+          @media screen and (max-width: 768px) {
+            margin-left: -30px;
+            margin-top: -180px;
+          }
         }
       }   
       .c-cover{
         padding-right: 150px;
         padding-left: 0;
+        @media screen and (max-width: 1500px) {
+          padding-right: 100px;
+        }
+        @media screen and (max-width: 1200px) {
+          padding-right: 0px;
+        }
       }   
     }
   }
 
   .section2, .section3 {
+    // max-height: 100vh;
     .part-item {
       position: relative;
       height: 100vh;
@@ -224,15 +317,23 @@ export default {
     padding: 0px 150px 10px;
     background-color: #fff;
     gap: 120px;
-
+    @media screen and (max-width: 1500px) {
+      padding: 0px var(--section-m-gap);
+    }
+    @media screen and (max-width: 1200px) {
+      gap: 80px;
+    }
+    @media screen and (max-width: 1000px) {
+      gap: 30px;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0px var(--section-s-gap);
+      gap: 0px;
+      flex-direction: column;
+    }
     img {
       width: 330px;
       margin-left: 50px;
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // margin-left: -300px;
-      // margin-top: -360px;
     }
     .hc1 {
       position: absolute;
@@ -243,11 +344,34 @@ export default {
       background-color: #FFC83E;
       border-radius: 0 0 160px 160px;
     }
+    .left3 {
+      @media screen and (max-width: 1200px) {
+        transform: scale(0.9);
+      }
+      @media screen and (max-width: 1000px) {
+        transform: scale(0.7);
+      }
+    }
     .part-item {
       &.right3 {
+        @media screen and (max-width: 768px) {
+          padding: 0px 0 30px;
+        }
         .c-cover {
           padding-left: 130px;
           padding-right: 50px;
+          @media screen and (max-width: 1500px) {
+            padding-left: 50px;
+            padding-right: 0px;
+          }
+          @media screen and (max-width: 1000px) {
+            padding-left: 20px;
+            padding-right: 0px;
+          }
+          @media screen and (max-width: 768px) {
+            padding-left: 0px;
+            padding-right: 0px;
+          }
         }
       }
     }
@@ -281,14 +405,14 @@ export default {
         &.c2 {
           width: 108px;
           height: 108px;
-          top: 0px;
+          top: -10px;
           left: 50%;
           margin-left: calc(-44vw);
         }
         &.c3 {
           width: 137px;
           height: 137px;
-          top: 280px;
+          top: 300px;
           left: 50%;
           margin-left: calc(-35vw);
         }
@@ -301,12 +425,20 @@ export default {
         font-size: 36px;
         margin-bottom: 20px;
         line-height: 54px;
+        @media screen and (max-width: 768px) {
+          font-size: 24px;
+          line-height: 36px;
+        }
       }
       .d-text {
         font-size: 16px;
         line-height: 26px;
         width: 600px;
+        max-width: 100%;
         margin: 0 auto 50px;
+        @media screen and (max-width: 768px) {
+          font-size: 13px;
+        }
       }
     }
   }

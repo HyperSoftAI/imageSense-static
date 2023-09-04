@@ -21,8 +21,8 @@
 <style lang="less" scoped>
 .download-cover {
     background-color: #000;
-    border-radius: 6px;
-    padding: 10px 12px;
+    border-radius: 8px;
+    padding: 10px 14px;
     color: #fff;
     display: flex;
     width: fit-content;

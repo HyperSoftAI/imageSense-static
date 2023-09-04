@@ -20,7 +20,7 @@ export default {
 header {
     position: absolute;
     width: 100%;
-    height: 80px;
+    height: 60px;
     top: 0;
     left: 0;
 }
@@ -30,7 +30,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 60px;
 
     // background-color: #000100;
     background-color: transparent;
@@ -53,7 +53,7 @@ header {
 
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
         padding: 0 var(--section-m-gap);
     }
 
@@ -79,8 +79,8 @@ nav {
     padding: 0 10px;
 
     .logo-cover {
-        width: 48px;
-        height: 48px;
+        width: 42px;
+        height: 42px;
         border-radius: 12px;
         background-color: #0491FF;
         display: flex;
@@ -89,8 +89,8 @@ nav {
         justify-content: center;
     }
     .logo {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
     }
     h1 {
         font-weight: 600;
