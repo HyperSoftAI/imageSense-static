@@ -151,7 +151,14 @@ export default {
         border-radius: 50%;
         left: 50%;
         top: 50%;
-        transform: translate(-500px, -50%);
+        margin-top: -40px;
+        margin-left: calc(-30vw);
+        @media screen and (max-width: 768px) {
+          width: 40px;
+          height: 40px;
+          margin-top: -20px;
+          margin-left: calc(-45vw);
+        }
       }
       &.c2 {
         width: 150px;
@@ -160,7 +167,11 @@ export default {
         border-radius: 50%;
         left: 50%;
         top: 50%;
-        transform: translateY(-50%) translateX(680px);
+        margin-left: calc(45vw);
+        @media screen and (max-width: 768px) {
+          width: 70px;
+          height: 70px;
+        }
       }
       &.c4 {
         width: 150px;
@@ -170,6 +181,14 @@ export default {
         left: 50%;
         transform: translateX(-800px);
         bottom: 0;
+        @media screen and (max-width: 768px) {
+          width: 100px;
+          height: 100px;
+          transform: none;
+          bottom: 75vh;
+          right: 10%;
+          left: auto;
+        }
       }
       &.c3 {
         width: 1300px;
@@ -222,8 +241,8 @@ export default {
         // transform: scale(1);
         width: 100%;
         flex: auto !important;
-        transform: scale(0.8);
-        height: 410px !important;
+        transform: scale(1);
+        height: 480px !important;
       }
       @media screen and (max-width: 400px) {
         // transform: scale(0.7);
@@ -243,23 +262,23 @@ export default {
         top: 50%;
         left: 50%;
         @media screen and (max-width: 768px) {
-          width: 200px;
+          width: 150px;
         }
 
         &.m1 {
           margin-left: -260px;
           margin-top: -320px;
           @media screen and (max-width: 768px) {
-            margin-left: -180px;
-            margin-top: -210px;
+            margin-left: -140px;
+            margin-top: -160px;
           }
         }
         &.m2 {
           margin-left: -30px;
           margin-top: -270px;
           @media screen and (max-width: 768px) {
-            margin-left: -30px;
-            margin-top: -180px;
+            margin-left: -20px;
+            margin-top: -130px;
           }
         }
       }   
@@ -294,6 +313,11 @@ export default {
           font-size: 20px;
           line-height: 26px;
           margin-bottom: 20px;
+          @media screen and (max-width: 768px) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 10px;
+          }
         }
         .b-title {
           color: #000B33;
@@ -301,12 +325,21 @@ export default {
           font-weight: 500;
           line-height: 54px;
           margin-bottom: 20px;
+          @media screen and (max-width: 768px) {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 10px;
+          }
         }
         .desc {
           font-size: 16px;
           color: #000B33;
           line-height: 26px;
           margin-bottom: 40px;
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
       }
     }
@@ -334,6 +367,11 @@ export default {
     img {
       width: 330px;
       margin-left: 50px;
+      @media screen and (max-width: 768px) {
+        margin: 0 auto;
+        width: 220px;
+        padding: 50px 0;
+      }
     }
     .hc1 {
       position: absolute;
@@ -343,6 +381,12 @@ export default {
       height: 160px;
       background-color: #FFC83E;
       border-radius: 0 0 160px 160px;
+      @media screen and (max-width: 768px) {
+        width: 160px;
+        height: 80px;
+        margin-left: 0px;
+        border-radius: 0 0 80px 80px;
+      }
     }
     .left3 {
       @media screen and (max-width: 1200px) {
@@ -351,11 +395,14 @@ export default {
       @media screen and (max-width: 1000px) {
         transform: scale(0.7);
       }
+      @media screen and (max-width: 768px) {
+        transform: scale(1);
+      }
     }
     .part-item {
       &.right3 {
         @media screen and (max-width: 768px) {
-          padding: 0px 0 30px;
+          padding: 0px 0 80px;
         }
         .c-cover {
           padding-left: 130px;

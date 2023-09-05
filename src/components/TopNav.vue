@@ -5,7 +5,7 @@
                 <div class="logo-cover">
                     <img alt="logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
                 </div>
-                <h1>IMAGE SENSE</h1>
+                <h1>ImageSense</h1>
             </div>
         </nav>
     </header>
