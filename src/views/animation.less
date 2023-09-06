@@ -1,0 +1,125 @@
+.animationHide() {
+    opacity: 0;
+    transform: translateY(40px) ;
+}
+.animationShow() {
+    opacity: 1;
+    transform: translateY(0px) ;
+}
+.animationHideScale() {
+    opacity: 0;
+    transform: translateY(40px) scale(0) ;
+}
+.animationShowScale() {
+    opacity: 1;
+    transform: translateY(0px) scale(1) ;
+}
+.section *{
+    transition: all 0.5s ease-in-out;
+}
+
+.section1 {
+    .section-inner {
+        .animationHide()
+    }
+    // .c1,.c2, .c4 {
+    //     .animationHideScale();
+    // }
+    .show-pic {
+        .animationHide()
+    }
+    &.section.active {
+        .section-inner {
+            .animationShow()
+        }
+        // .c1,.c2,.c4 {
+        //     .animationShowScale();
+        // }
+        .show-pic {
+            transition-delay: 500ms;
+            .animationShow()
+        }
+    }
+}
+
+.section2 {
+    .left2 {
+        &.part-item {
+            .m1 {
+                .animationHide()
+            }
+            .m2 {
+                .animationHide()
+            }
+        }
+    }
+    .right2 {
+        &.part-item {
+            .c-cover {
+                .animationHide()
+            }
+        }
+    }
+    &.active {
+        .left2 {
+            &.part-item {
+                .m1 {
+                    .animationShow()
+                }
+                .m2 {
+                    .animationShow();
+                    transition-delay: 400ms;
+                }
+            }
+        }
+        .right2 {
+            &.part-item {
+                .c-cover {
+                    transition-delay: 800ms;
+                    .animationShow()
+                }
+            }
+        }
+    }
+}
+
+.section3 {
+    .left3 {
+        img {
+            .animationHide()
+        }
+        .hc1 {
+            opacity: 0;
+            transform: translateX(40px) ;
+        }
+    }
+    .right3 {
+        &.part-item {
+            .c-cover {
+                .animationHide()
+            }
+        }
+    }
+    &.active {
+        .left3 {
+            &.part-item {
+                img {
+                    transition-delay: 400ms;
+                    .animationShow()
+                }
+                .hc1 {
+                    opacity: 01;
+                    transform: translateX(0px) ;
+                }
+            }
+
+        }
+        .right3 {
+            &.part-item {
+                .c-cover {
+                    .animationShow()
+                }
+            }
+        }
+    }
+}

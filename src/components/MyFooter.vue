@@ -1,7 +1,7 @@
 <template>
     <div class="footer" id="concatUs">
         <div class="line"></div>
-        <p class="copyright">© 2023 copyright Hypercodec.inc All Rights Reserved</p>
+        <p class="copyright">© 2023 copyright HyperSoft CO., LTD All Rights Reserved</p>
     </div>
 </template>
 

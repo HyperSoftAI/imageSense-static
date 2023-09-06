@@ -61,12 +61,48 @@ import dButton from '../components/dButton.vue'
 export default {
   components: {
     dButton
+  },
+  data() {
+    return {
+    }
+  },
+  mounted () {
+    // this.$nextTick(() => {
+    //   this.handleScrollAnimation();
+    // })
+    // setTimeout(() => {
+    //   document.querySelectorAll('.section').forEach(item => {
+    //     item.classList.add('active');
+    //   })
+    // }, 0);
+  
+  },
+  methods: {
+    
+    // handleScrollAnimation () {
+    //   const io = new IntersectionObserver(ioes => {
+    //     ioes.forEach(ioe => {
+    //       const el = ioe.target;
+    //       const intersectionRatio = ioe.intersectionRatio;
+    //       if (intersectionRatio > 0 && intersectionRatio <= 1) {
+    //         el.classList.add('active');
+    //       } else {
+    //         el.classList.remove('active');
+    //       }
+    //     });
+    //   });
+    //   const imgs = Array.from(document.querySelectorAll(".section"));
+    //   imgs.forEach(item => io.observe(item));
+    // }
   }
 }
 
 </script>
 
 <style lang="less">
+  body {
+    user-select: none;
+  }
   .section {
   }
   .section1 {
@@ -179,7 +215,7 @@ export default {
         background-color: fade(#fff, 10%);
         border-radius: 50%;
         left: 50%;
-        transform: translateX(-800px);
+        margin-left: -800px;
         bottom: 0;
         @media screen and (max-width: 768px) {
           width: 100px;
@@ -297,6 +333,9 @@ export default {
 
   .section2, .section3 {
     // max-height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    align-items: center;
     .part-item {
       position: relative;
       height: 100vh;
@@ -489,4 +528,6 @@ export default {
       }
     }
   }
+
+// @import './animation.less';
 </style>
